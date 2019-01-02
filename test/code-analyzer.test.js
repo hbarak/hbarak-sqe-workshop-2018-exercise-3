@@ -24,7 +24,7 @@ describe('The javascript parser', () => {
 
 describe('The createEnv function', () => {
     it('is parsing  parameters, atomic and array, correctly', () => {
-        let params = ['1','2','[1,2]'];
+        let params = ['1','2',[1,2]];
         let code ='function foo(x, y, z){\n' +
             '    let a = x + 1;\n' +
             '    let b = a + y;\n' +
@@ -32,8 +32,8 @@ describe('The createEnv function', () => {
             '    return c;\n' +
             '}';
         assert.equal(
-            JSON.stringify(createEnv(parseCode(code).body[0], params)),
-            '{"x":"1","y":"2","z":"[1,2]"}'
+            JSON.stringify(createEnv(parseCodeWithRange(code).body[0], params)),
+            '{"x":"1","y":"2","z":[1,2]}'
         );
     });
 

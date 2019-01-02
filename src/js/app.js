@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {parseCodeWithRange} from './code-analyzer';
+import { parseCodeWithRange} from './code-analyzer';
 import {generateGraph, createEnv, paintPath} from './graph-evaluator';
 import {dot} from './newDot';
 import Viz from 'viz.js';
@@ -47,7 +47,7 @@ function extracted(i, input, ans) {
         if (j === input.length || input[j] === ',') {
             let param = input.slice(i, j);
             ans.push(JSON.parse(param));
-
+            //window.alert(JSON.parse(param));
             i = j;
             break;
         }
