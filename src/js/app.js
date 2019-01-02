@@ -47,7 +47,6 @@ function extracted(i, input, ans) {
         if (j === input.length || input[j] === ',') {
             let param = input.slice(i, j);
             ans.push(JSON.parse(param));
-            //window.alert(JSON.parse(param));
             i = j;
             break;
         }
